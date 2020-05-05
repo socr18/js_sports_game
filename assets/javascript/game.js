@@ -46,19 +46,41 @@ teamTwoShootButton.addEventListener('click', function () {
 
 // Reset Scores
 let resetButtonTimes
+let tonew
+let tonel
+let ttwol
+let ttwow
+let bothties
 
 const resetButton = document.querySelector('#reset-button')
 const numResets = document.querySelector('#num-resets')
+const teamonewins = document.querySelector(".team-one-wins")
+const teamtwowins = document.querySelector(".team-two-wins")
+const teamoneloss = document.querySelector(".team-one-losses")
+const teamtwoloss = document.querySelector(".team-two-losses")
+const ties = document.querySelectorAll(".ties")
 
 resetButton.addEventListener("click", function () {
     // Show the Winner of the Game
 
     if (Number(teamOneGoalsScored.innerHTML) > Number(teamTwoGoalsScored.innerHTML)) {
-        console.log('Team One Won')
+        tonew = Number(teamonewins.innerHTML)
+        tonew ++
+        teamonewins.innerHTML = tonew
+        ttwol = Number(teamtwoloss.innerHTML)
+        ttwol ++
+        teamtwoloss.innerHTML = ttwol
     } else if (Number(teamOneGoalsScored.innerHTML) < Number(teamTwoGoalsScored.innerHTML)) {
-        console.log('Team Two Won')
+        ttwow = Number(teamtwowins.innerHTML)
+        ttwow ++
+        teamtwowins.innerHTML = ttwow
+        tonel = Number(teamoneloss.innerHTML)
+        tonel ++
+        teamoneloss.innerHTML = tonel
     } else {
-        console.log('The game ended in a tie!!!')
+        bothties = Number(ties.innerHTML)
+        bothties ++
+        ties.innerHTML = bothties
     }
 
     teamOneAttempts.innerHTML = 0
