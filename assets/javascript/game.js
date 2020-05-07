@@ -54,11 +54,13 @@ let bothties
 
 const resetButton = document.querySelector('#reset-button')
 const numResets = document.querySelector('#num-resets')
-const teamonewins = document.querySelector(".team-one-wins")
-const teamtwowins = document.querySelector(".team-two-wins")
-const teamoneloss = document.querySelector(".team-one-losses")
-const teamtwoloss = document.querySelector(".team-two-losses")
-const ties = document.querySelectorAll(".ties")
+const teamonewins = document.querySelector('.team-one-wins')
+const teamtwowins = document.querySelector('.team-two-wins')
+const teamoneloss = document.querySelector('.team-one-losses')
+const teamtwoloss = document.querySelector('.team-two-losses')
+let ties = document.querySelectorAll('.ties')
+let tieval = document.querySelector('.ties')
+const gw = document.querySelector('#game-winner')
 
 resetButton.addEventListener("click", function () {
     // Show the Winner of the Game
@@ -70,6 +72,7 @@ resetButton.addEventListener("click", function () {
         ttwol = Number(teamtwoloss.innerHTML)
         ttwol ++
         teamtwoloss.innerHTML = ttwol
+        gw.innerHTML = 'Team One Won!!!'
     } else if (Number(teamOneGoalsScored.innerHTML) < Number(teamTwoGoalsScored.innerHTML)) {
         ttwow = Number(teamtwowins.innerHTML)
         ttwow ++
@@ -77,10 +80,21 @@ resetButton.addEventListener("click", function () {
         tonel = Number(teamoneloss.innerHTML)
         tonel ++
         teamoneloss.innerHTML = tonel
+        gw.innerHTML = 'Team Two Won!!!!'
     } else {
-        bothties = Number(ties.innerHTML)
+        console.log('Ties')
+        bothties = Number(tieval.innerHTML)
+        console.log(bothties)
         bothties ++
-        ties.innerHTML = bothties
+        console.log(bothties)
+
+        // update all ties
+        for (let i = 0; i < ties.length; i++) {
+            console.log('help')
+            tieval.innerHTML = bothties
+        }
+        
+        gw.innerHTML = 'Game Ended in a Tie!!!'
     }
 
     teamOneAttempts.innerHTML = 0
