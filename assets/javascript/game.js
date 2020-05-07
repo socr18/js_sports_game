@@ -5,8 +5,13 @@ let teamOneGoals
 const teamOneAttempts = document.querySelector('#teamone-numshots')
 const teamOneShootButton = document.querySelector('#teamone-shoot-button')
 const teamOneGoalsScored = document.querySelector('#teamone-numgoals')
+let kicksound = new Audio();
+kicksound.src = './assets/sounds/soccer-kick.wav'
 
 teamOneShootButton.addEventListener('click', function () {
+
+    // Play Sound
+    kicksound.play()
 
     // Number of Shots Taken
     teamOneShots = Number(teamOneAttempts.innerHTML)
@@ -30,6 +35,9 @@ const teamTwoShootButton = document.querySelector('#teamtwo-shoot-button')
 const teamTwoGoalsScored = document.querySelector('#teamtwo-numgoals')
 
 teamTwoShootButton.addEventListener('click', function () {
+
+    // Play Sound
+    kicksound.play()
 
     // Number of Shots Taken
     teamTwoShots = Number(teamTwoAttempts.innerHTML)
@@ -82,16 +90,12 @@ resetButton.addEventListener("click", function () {
         teamoneloss.innerHTML = tonel
         gw.innerHTML = 'Team Two Won!!!!'
     } else {
-        console.log('Ties')
         bothties = Number(tieval.innerHTML)
-        console.log(bothties)
         bothties ++
-        console.log(bothties)
 
         // update all ties
         for (let i = 0; i < ties.length; i++) {
-            console.log('help')
-            tieval.innerHTML = bothties
+            ties[i].innerHTML = bothties
         }
         
         gw.innerHTML = 'Game Ended in a Tie!!!'

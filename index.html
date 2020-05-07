@@ -13,42 +13,48 @@
 
     <div>
         <h1>My JS Game</h1>
+        
+        <div class="flex-row">
+            <div id="team-one-record">
+                <h2>Team One Record</h2>
+                <div class="flex-record">
+                    <div class="record-title">Wins: <div class="team-one-wins">0</div></div>
+                    <div class="record-title">Losses: <div class="team-one-losses">0</div></div>
+                    <div class="record-title">Ties: <div class="ties">0</div></div>
+                </div>
+            </div>
 
-        <div id="reset-container">
-            <button id="reset-button">RESET</button><br>
-            NUMBER OF RESETS: <span id="num-resets">0</span>
+            <div id="reset-container">
+                <div id="game-winner"></div>
+                
+                <button id="reset-button" class="flex-record">RESET</button>
+    
+                <div class="flex-record">
+                NUMBER OF RESETS: <span id="num-resets">0</span>
+                </div>
+            </div>
+
+            <div id="team-two-record">
+                <h2>Team Two Record</h2>
+                <div class="flex-record">
+                    <div class="record-title">Wins: <div class="team-two-wins">0</div></div>
+                    <div class="record-title">Losses: <div class="team-two-losses">0</div></div>
+                    <div class="record-title">Ties: <div class="ties">0</div></div>
+                </div>
+            </div>
         </div>
-
-        <div id="last-game-winner"></div>
-
-        <div id="team-one-record">
-            <h2>Team One Record</h2>
-            <div class="record-title">Wins: <div class="team-one-wins">0</div></div>
-            <div class="record-title">Losses: <div class="team-one-losses">0</div></div>
-            <div class="record-title">Ties: <div class="ties">0</div></div>
-        </div>
-
-        <div id="game-winner"></div>
-
-        <div id="team-two-record">
-            <h2>Team Two Record</h2>
-            <div class="record-title">Wins: <div class="team-two-wins">0</div></div>
-            <div class="record-title">Losses: <div class="team-two-losses">0</div></div>
-            <div class="record-title">Ties: <div class="ties">0</div></div>
-        </div>
-
         <div class="clear"></div>
 
         <div class="left">
             <h2>Team 1</h2>
 
-            <div class="goals">
+            <div class="goals flex-record">
                 SHOTS TAKEN: <span id="teamone-numshots">0</span>
                 GOALS: <span id="teamone-numgoals">0</span>
             </div>
 
             <div>
-                <button id="teamone-shoot-button">SHOOT</button>
+                <button id="teamone-shoot-button" class="flex-record">SHOOT</button>
             </div>
 
         </div>
@@ -56,13 +62,13 @@
         <div class="right">
             <h2>Team 2</h2>
 
-            <div class="goals">
+            <div class="goals flex-record">
                 SHOTS TAKEN: <span id="teamtwo-numshots">0</span>
                 GOALS: <span id="teamtwo-numgoals">0</span>
             </div>
 
             <div>
-                <button id="teamtwo-shoot-button">SHOOT</button>
+                <button id="teamtwo-shoot-button" class="flex-record">SHOOT</button>
             </div>
             
         </div>

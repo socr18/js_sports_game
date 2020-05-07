@@ -1,15 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
 .hide {
     display: none;
 }
+
+h1 {
+    font-size: 32px;
+    color: white;
+}
+
 .left {
     float: left;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
+    width: 33%;
 }
+
 .right {
     float: right;
+    flex-direction: column;
+    display: flex;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
+    width: 33%;
 }
+
 .clear {
     clear: both;
 }
+
+
 #reset-container, h1 {
     text-align: center;
+}
+
+body {
+    background: black url('../images/soccer-background.jpg') no-repeat;
+    background-size: cover;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+button {
+    background: darkgreen;
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+#reset-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 33%;
+    margin: 0 auto 10px auto;
+}
+
+#team-one-record {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 33%;
+}
+
+#team-two-record {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 33%;
+}
+
+#team-one-record h2, #team-two-record h2, .left h2, .right h2 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.flex-record {
+    width: 100%;
+    flex: 0 0 auto;
+    margin: 10px auto;
+}
+
+.record-title {
+    display: block;
+    float: left;
+    padding: 0 5px 0 0;
+}
+
+.team-one-wins, .team-one-losses, .ties, .team-two-wins, .team-two-losses {
+    display: inline;
+}
+
+#game-winner {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    color: goldenrod;
+    width: 100%;
+    margin: 0 auto;
 }
